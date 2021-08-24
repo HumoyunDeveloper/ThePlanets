@@ -11,15 +11,12 @@ var orbit = document.getElementById('orbit');
 var diameter = document.getElementById('diameter');
 var all = document.getElementById('all');
 var sound = new Audio();
-var soundTyping = new Audio();
 var nameOfPlanet = document.getElementById('name');
 var numberOfFunctions = 0;
 var isTyping = false;
 var lang = localStorage.getItem("lang");
 var clamped = [], planets;
 sound.src = './res/sounds/button-3.wav';
-soundTyping.src = './res/sounds/mus.mp3';
-soundTyping.volume = 0.8;
 
 function languages() {
  
@@ -107,7 +104,7 @@ function waitWrite(text, id) {
     numberOfFunctions += 1;
     if (document.querySelector('#' + id)) {
         isTyping = true;
-        soundTyping.play();
+        
         var element = document.querySelector('#' + id);
         element.innerHTML = "";
         var incnum = -1;
@@ -154,7 +151,7 @@ function waitWrite(text, id) {
             incnum = -1;
             clearInterval(interval);
             isTyping = false;
-            soundTyping.pause();
+            
         } else {
             element.innerHTML += isArrayFull[incnum];
         }
@@ -274,11 +271,7 @@ function hideLoading() {
     }, 500);
 }
 function loadPage() {
-    document.getElementById('bgm').onload = function() {
-        document.getElementById('bgm').play();
-        
-    }
-    soundTyping.volume = 1;
+ 
     showLoading();
     var tme = setTimeout(function () {
         hideLoading();
@@ -288,7 +281,7 @@ function loadPage() {
 CHECK();
 function CHECK() {
     if (isTyping) {
-        soundTyping.play();
+        
     }
     requestAnimationFrame(CHECK);
 }
