@@ -1,0 +1,17 @@
+{
+    "name" : "Planets / Sayyoralar",
+    "short_name" : "Planets / Sayyoralar",
+    "description" : "Planets / Sayyoralar",
+    "start_url" : ".",
+    "display" : "fullscreen",
+    "icons" : [
+        {
+            "sizes" : "144x144",
+            "type" : "image/png",
+            "src" : "./res/used/noun_Earth_269596.png"
+        }
+    ],
+    "background_color" : "#223",
+    "theme_color" : "#112",
+    "orientation" : "portrait"
+}
