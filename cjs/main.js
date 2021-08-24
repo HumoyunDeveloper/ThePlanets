@@ -18,7 +18,7 @@ var isTyping = false;
 var lang = localStorage.getItem("lang");
 var clamped = [], planets;
 sound.src = './res/sounds/button-3.wav';
-soundTyping.src = './res/sounds/fast-pace-Typing-on-mechanical-keyboard-1-www.FesliyanStudios.com (1).mp3';
+soundTyping.src = './res/sounds/mus.mp3';
 soundTyping.volume = 0.8;
 
 function languages() {
@@ -99,7 +99,6 @@ languages();
 
 function playSound() {
     sound.play();
-
 }
 
 var numberOfFunctions = 0;
@@ -275,7 +274,10 @@ function hideLoading() {
     }, 500);
 }
 function loadPage() {
-    document.getElementById('bgm').play();
+    document.getElementById('bgm').onload = function() {
+        document.getElementById('bgm').play();
+        
+    }
     soundTyping.volume = 1;
     showLoading();
     var tme = setTimeout(function () {
@@ -301,5 +303,5 @@ function CHECK() {
 // }
 
 window.onpageshow = loadPage;
-window.onload = loadPage;
+document.addEventListener("DOMContentLoaded", loadPage);
 window.onclick = playSound;
