@@ -275,7 +275,7 @@ function loadPage() {
     showLoading();
     var tme = setTimeout(function () {
         hideLoading();
-    }, 25000);
+    }, 40000);
 }
 
 CHECK();
